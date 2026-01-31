@@ -120,17 +120,11 @@ http://localhost:3000
 
 ---
 
-## 📌 Intended Use
-
-- Backend authentication reference
-- Express + Supabase integration example
-- Portfolio demonstration of backend architecture and security awareness
-
 This project is **not production-ready** and is **not deployed**.
 
 ---
 
 ## 📄 License
 
-Shared for educational and portfolio demonstration purposes.
+Shared for educational and demonstration purposes.
 "# AniMatchGR" 
