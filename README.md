@@ -2,7 +2,7 @@
 
 **aniMatchAuth** is an Express.js–based authentication and session management backend developed as part of the AniMatch project.
 
-This repository is a **portfolio-safe, sanitized version** of the project.  
+This repository is a **sanitized version** of the project.  
 All sensitive data, credentials, and internal-only files have been intentionally removed.  
 It is not deployed and is shared for **demonstration and learning purposes only**.
 
