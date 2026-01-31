@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AniMatch - Discover Anime</title>
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="shortcut icon" href="../images/logo.svg" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/explore.css" />
+  </head>
+  <body>
+    <div class="container-full">
+      <header>
+        <div class="logo">
+          <img src="../images/logo.svg" alt="logo" />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/explore" class="active">Explore</a></li>
+            <li><a href="/recommendations">Recommendations</a></li>
+            <li><a href="/profile">Profile</a></li>
+          </ul>
+        </nav>
+        <button type="button" id="logout-btn">Logout</button>
+      </header>
+    </div>
+    <div class="container">
+      <!-- Search and Filters -->
+      <div class="search-filter">
+        <div class="search-area">
+          <input type="text" id="search-bar" placeholder="Search anime..." />
+        </div>
+        <select id="genre-filter">
+          <option value="">Genres</option>
+          <!-- Genres will be dynamically populated -->
+        </select>
+        <select id="year-filter">
+          <option value="">Year</option>
+          <!-- Years will be dynamically populated -->
+        </select>
+        <select id="season-filter">
+          <option value="">Season</option>
+          <option value="WINTER">Winter</option>
+          <option value="SPRING">Spring</option>
+          <option value="SUMMER">Summer</option>
+          <option value="FALL">Fall</option>
+        </select>
+        <select id="format-filter">
+          <option value="">Format</option>
+          <option value="TV">TV</option>
+          <option value="MOVIE">Movie</option>
+          <option value="OVA">OVA</option>
+          <option value="ONA">ONA</option>
+          <option value="SPECIAL">Special</option>
+        </select>
+        <select id="status-filter">
+          <option value="">Status</option>
+          <option value="FINISHED">Finished</option>
+          <option value="RELEASING">Releasing</option>
+          <option value="NOT_YET_RELEASED">Not Yet Released</option>
+          <option value="CANCELLED">Cancelled</option>
+        </select>
+
+        <div class="sort-dropdown" id="sort-dropdown" hidden>
+          <button id="sort-btn">Sort <i class="fas fa-sort"></i></button>
+          <div class="sort-menu" id="sort-menu">
+            <a href="#" data-sort="DEFAULT">Default</a>
+            <a href="#" data-sort="TITLE_ENGLISH">Title</a>
+            <a href="#" data-sort="POPULARITY_DESC">Popularity</a>
+            <a href="#" data-sort="SCORE_DESC">Average Score</a>
+            <a href="#" data-sort="TRENDING_DESC">Trending</a>
+            <a href="#" data-sort="FAVORITES_DESC">Favorites</a>
+            <a href="#" data-sort="UPDATED_AT_DESC">Date Added</a>
+            <a href="#" data-sort="START_DATE">Release Date</a>
+          </div>
+        </div>
+
+        <!-- Clear Filters Button -->
+        <button id="clear-filters-btn" hidden>Clear Filters</button>
+      </div>
+
+      <!-- Default Sections -->
+      <div id="default-sections">
+        <!-- Trending Now Section -->
+        <div class="section" id="trending-section">
+          <div class="section-header">
+            <h2>Trending Now</h2>
+            <a href="#" class="view-all" data-sort="TRENDING_DESC">View All</a>
+          </div>
+          <div class="anime-grid" id="trending-grid"></div>
+        </div>
+
+        <!-- Popular This Season Section -->
+        <div class="section" id="popular-season-section">
+          <div class="section-header">
+            <h2>Popular This Season</h2>
+            <a
+              href="#"
+              class="view-all"
+              data-sort="POPULARITY_DESC"
+              data-season="FALL"
+              data-year="2024"
+              >View All</a
+            >
+          </div>
+          <div class="anime-grid" id="popular-season-grid"></div>
+        </div>
+
+        <!-- Upcoming Next Season Section -->
+        <div class="section" id="upcoming-season-section">
+          <div class="section-header">
+            <h2>Upcoming Next Season</h2>
+            <a
+              href="#"
+              class="view-all"
+              data-sort="POPULARITY_DESC"
+              data-season="WINTER"
+              data-year="2025"
+              >View All</a
+            >
+          </div>
+          <div class="anime-grid" id="upcoming-season-grid"></div>
+        </div>
+
+        <!-- All-Time Popular Section -->
+        <div class="section" id="all-time-popular-section">
+          <div class="section-header">
+            <h2>All-Time Popular</h2>
+            <a href="#" class="view-all" data-sort="POPULARITY_DESC"
+              >View All</a
+            >
+          </div>
+          <div class="anime-grid" id="all-time-popular-grid"></div>
+        </div>
+
+        <!-- Top 10 Section -->
+        <div class="section top-10-section" id="top-10-section">
+          <div class="section-header">
+            <h2>Top 10 Anime</h2>
+            <a href="#" class="view-all" data-sort="SCORE_DESC">View All</a>
+          </div>
+          <div class="top-10-grid" id="top-10-grid"></div>
+        </div>
+      </div>
+
+      <!-- Sorted Results Section -->
+      <div id="sorted-results" style="display: none">
+        <div class="section-header">
+          <h2>Results</h2>
+        </div>
+        <div class="anime-grid" id="sorted-grid"></div>
+      </div>
+    </div>
+    <footer></footer>
+    <script src="scripts/explore.js"></script>
+    <script src="scripts/load-footer.js"></script>
+  </body>
+</html>

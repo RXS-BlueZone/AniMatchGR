@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/anime-details.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.2-web/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-thin.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-light.css"
+    />
+    <script src="
+https://cdn.jsdelivr.net/npm/@apollo/client@3.11.8/invariantErrorCodes.min.js
+"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/graphql@16.9.0/index.min.js
+"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+    <title>AniMatch</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="../images/logo.svg" alt="logo" />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/explore">Explore</a></li>
+            <li><a href="/recommendations">Recommendations</a></li>
+            <li><a href="/profile">Profile</a></li>
+          </ul>
+        </nav>
+        <button type="button" id="logout-btn">Logout</button>
+      </header>
+      <main>
+        <div class="banner">
+          <div class="light-overlay"></div>
+          <img src="" alt="banner" id="banner-img" />
+        </div>
+        <div class="anime-details">
+          <div class="details-left">
+            <div class="cover-image">
+              <img src="" alt="cover" id="cover-img" />
+            </div>
+            <div class="user-options">
+              <div class="list-options">
+                <button id="list-btn">Add To List</button>
+                <div class="list-options-wrapper">
+                  <button id="list-options">
+                    <i class="fa-light fa-chevron-down"></i>
+                  </button>
+                  <div class="edit-anime-status">
+                    <button type="button" class="status-btn">
+                      Watching
+                      <span><i class="fa-solid fa-check"></i></span>
+                    </button>
+                    <button type="button" class="status-btn">
+                      Rewatching
+                      <span><i class="fa-solid fa-check"></i></span>
+                    </button>
+                    <button type="button" class="status-btn">
+                      Completed
+                      <span><i class="fa-solid fa-check"></i></span>
+                    </button>
+                    <button type="button" class="status-btn">
+                      Paused
+                      <span><i class="fa-solid fa-check"></i></span>
+                    </button>
+                    <button type="button" class="status-btn">
+                      Dropped
+                      <span><i class="fa-solid fa-check"></i></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="add-to-fav">
+                <button id="fav-btn">
+                  <i class="fa-solid fa-heart white-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="details-right">
+            <h1 id="anime-title"></h1>
+            <p id="anime-description"></p>
+          </div>
+        </div>
+        <div class="sections">
+          <button type="button" id="overview-btn" class="active-section">
+            Overview
+          </button>
+          <button type="button" id="characters-btn">Characters</button>
+        </div>
+      </main>
+    </div>
+    <div class="to-display-container">
+      <div class="to-display" id="to-display">
+        <div class="display-left">
+          <div class="alltime" id="rank-item">
+            <i></i>
+            <p>
+              #<span id="rank-alltime"></span> <span id="rank-context"></span>
+            </p>
+          </div>
+          <div class="alltime" id="rank-item-2">
+            <i></i>
+            <p>
+              #<span id="rank-alltime-2"></span>
+              <span id="rank-context-2"></span>
+            </p>
+          </div>
+          <div class="anime-additional-info">
+            <div class="info-item">
+              <h5>Airing</h5>
+              <p>
+                Ep<span id="airing-ep"></span>: <span id="airing-time"></span>
+              </p>
+            </div>
+            <div class="info-item">
+              <h5>Format</h5>
+              <p id="format"></p>
+            </div>
+            <div class="info-item">
+              <h5>Episodes</h5>
+              <p id="ep-count"></p>
+            </div>
+            <div class="info-item">
+              <h5>Episode Duration</h5>
+              <p id="ep-duration"></p>
+            </div>
+            <div class="info-item">
+              <h5>Status</h5>
+              <p id="status"></p>
+            </div>
+            <div class="info-item">
+              <h5>Start Date</h5>
+              <p id="start-date"></p>
+            </div>
+            <div class="info-item">
+              <h5>End Date</h5>
+              <p id="end-date"></p>
+            </div>
+            <div class="info-item">
+              <h5>Season</h5>
+              <p id="season"></p>
+            </div>
+            <div class="info-item">
+              <h5>Average Score</h5>
+              <p id="average-score"></p>
+            </div>
+            <div class="info-item">
+              <h5>Mean Score</h5>
+              <p id="mean-score"></p>
+            </div>
+            <div class="info-item">
+              <h5>Popularity</h5>
+              <p id="popularity"></p>
+            </div>
+            <div class="info-item">
+              <h5>Favorites</h5>
+              <p id="favorites"></p>
+            </div>
+            <div class="info-item">
+              <h5>Studios</h5>
+              <p id="studios"></p>
+            </div>
+            <div class="info-item">
+              <h5>Producers</h5>
+              <p id="producers"></p>
+            </div>
+            <div class="info-item">
+              <h5>Source</h5>
+              <p id="source"></p>
+            </div>
+            <div class="info-item">
+              <h5>Hashtag</h5>
+              <p id="hashtag"></p>
+            </div>
+            <div class="info-item">
+              <h5>Genres</h5>
+              <p id="genres"></p>
+            </div>
+            <div class="info-item">
+              <h5>Romaji</h5>
+              <p id="romaji-title"></p>
+            </div>
+            <div class="info-item">
+              <h5>English</h5>
+              <p id="english-title"></p>
+            </div>
+            <div class="info-item">
+              <h5>Native</h5>
+              <p id="native-title"></p>
+            </div>
+            <div class="info-item">
+              <h5>Synonyms</h5>
+              <p id="synonyms"></p>
+            </div>
+          </div>
+          <div class="tags-wrapper">
+            <div class="tags-container">
+              <h6>Tags</h6>
+              <div class="tags">
+                <div class="tag-item">
+                  <div class="tags-desc"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-button-container">
+            <button onclick="location.href = 'add-review.html'">
+              <i class="fa-regular fa-pen-to-square"></i>
+              <span>Write Review</span>
+            </button>
+          </div>
+        </div>
+        <div class="display-right">
+          <div class="relations-container overview-section">
+            <h6>Relations</h6>
+            <div class="relations-wrapper">
+              <div class="relations-item"></div>
+            </div>
+          </div>
+          <div class="characters-container overview-section">
+            <h6>Characters</h6>
+            <div class="characters"></div>
+          </div>
+          <div class="scores-container overview-section">
+            <h6>Score Distribution</h6>
+            <div class="scores-distribution-container">
+              <div class="scores">
+                <div class="score-item">
+                  <span class="score-count"></span>
+                  <span id="10" class="score-span"></span>
+                  <span class="score-categ"></span>
+                </div>
+                <div class="score-item">
+                  <span class="score-count"></span>
+                  <span id="20" class="score-span"></span>
+                  <span class="score-categ"></span>
+                </div>
+                <div class="score-item">
+                  <span class="score-count"></span>
+                  <span id="30" class="score-span"></span>
+                  <span class="score-categ"></span>
+                </div>
+                <div class="score-item">
+                  <span class="score-count"></span>
+                  <span id="40" class="score-span"></span>
+                  <span class="score-categ"></span>
+                </div>
+                <div class="score-item">
+                  <span class="score-count"></span>
+                  <span id="50" class="score-span"></span>
+                  <span class="score-categ"></span>
+                </div>
+                <div class="score-item">
+                  <span class="score-count"></span>
+                  <span id="60" class="score-span"></span>
+                  <span class="score-categ"></span>
+                </div>
+                <div class="score-item">
+                  <span class="score-count"></span>
+                  <span id="70" class="score-span"></span>
+                  <span class="score-categ"></span>
+                </div>
+                <div class="score-item">
+                  <span class="score-count"></span>
+                  <span id="80" class="score-span"></span>
+                  <span class="score-categ"></span>
+                </div>
+                <div class="score-item">
+                  <span class="score-count"></span>
+                  <span id="90" class="score-span"></span>
+                  <span class="score-categ"></span>
+                </div>
+                <div class="score-item">
+                  <span class="score-count"></span>
+                  <span id="100" class="score-span"></span>
+                  <span class="score-categ"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="trailer-container overview-section">
+            <h6>Trailer</h6>
+            <div class="trailer" id="trailer-container">
+              <div id="ytplayer"></div>
+            </div>
+          </div>
+          <div class="recommendations-container overview-section">
+            <div class="recommendations-top">
+              <h6>Recommendations</h6>
+              <div class="recommendation-links">
+                <a href="#">+ Add</a>
+                <a href="#"> View All Recommendations</a>
+              </div>
+            </div>
+            <div class="recommendations"></div>
+          </div>
+          <div class="characters-container" id="characters-section">
+            <h6>Characters</h6>
+            <div class="characters" id="characters2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+    <script src="scripts/anime-details.js"></script>
+    <script src="scripts/load-footer.js"></script>
+    <script src="scripts/addToList.js"></script>
+    <script src="scripts/addToFavorites.js"></script>
+    <script>
+      const editAnimeStatus = document.querySelector(".edit-anime-status");
+      const statusBtns = document.querySelectorAll(".status-btn");
+
+      statusBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          statusBtns.forEach((btn) => {
+            btn.classList.remove("active-status");
+            btn.querySelector("span").style.display = "none";
+          });
+          btn.classList.add("active-status");
+          btn.querySelector("span").style.display = "inline";
+        });
+      });
+
+      const listOptionBtn = document.getElementById("list-options");
+
+      listOptionBtn.addEventListener("click", () => {
+        editAnimeStatus.classList.toggle("show-status");
+      });
+    </script>
+  </body>
+</html>

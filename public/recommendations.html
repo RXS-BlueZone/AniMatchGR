@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Recommendations</title>
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="shortcut icon" href="../images/logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/recommendations.css" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.2-web/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-thin.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-light.css"
+    />
+  </head>
+  <body>
+    <div class="container-full">
+      <header>
+        <div class="logo">
+          <img src="../images/logo.svg" alt="logo" />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/explore">Explore</a></li>
+            <li><a href="/recommendations" class="active">Recommendations</a></li>
+            <li><a href="/profile">Profile</a></li>
+          </ul>
+        </nav>
+        <button type="button" id="logout-btn">Logout</button>
+      </header>
+    </div>
+    <div class="loader">
+      <div class="spinning">
+        <span class="spinning-item">
+          ( ˘▽˘)っ♨
+        </span>
+      </div>
+    </div>
+    <div class="container" id="main-content">
+      <div class="recommendations-container">
+        <h1>Anime Recommendations</h1>
+        <div class="recommendations" id="content"></div>
+        <div class="buttons">
+          <button id="change-preferences">Change Genre Preferences</button>
+          <a href="/explore"><button id="explore-more">Explore More</button></a>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+    <script src="/scripts/recommendations.js"></script>
+    <script src="/scripts/load-footer.js"></script>
+  </body>
+</html>

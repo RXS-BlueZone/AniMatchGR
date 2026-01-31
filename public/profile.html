@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/profile.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="shortcut icon" href="../images/logo.svg" type="image/x-icon" />
+  <link
+    href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.2-web/css/all.min.css"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-thin.css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-regular.css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-light.css" />
+  <script src="
+        https://cdn.jsdelivr.net/npm/@apollo/client@3.11.8/invariantErrorCodes.min.js
+        "></script>
+  <script src="
+        https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+        "></script>
+  <script src="
+        https://cdn.jsdelivr.net/npm/graphql@16.9.0/index.min.js
+        "></script>
+  <title>Profile - AniMatch</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="../images/logo.svg" alt="logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index">Home</a></li>
+          <li><a href="/explore">Explore</a></li>
+          <li><a href="/recommendations">Recommendations</a></li>
+          <li><a href="/profile" class="active">Profile</a></li>
+        </ul>
+      </nav>
+      <button type="button" id="logout-btn">Logout</button>
+    </header>
+    <main>
+      <div class="profile-banner-container">
+        <div class="profile-banner">
+          <div class="profile-wrapper">
+            <div class="profile-pic">
+              <img src="../images/avatar.png" alt="profile-pic" />
+            </div>
+            <h2>username</h2>
+          </div>
+        </div>
+      </div>
+      <div class="sections">
+        <button type="button" id="anime-list-btn" class="active-section">
+          Anime List
+        </button>
+        <button type="button" id="favorites-btn">Favorites</button>
+        <button type="button" id="reviews-btn">Reviews</button>
+      </div>
+      <div class="anime-list-container">
+        <div class="anime-list-wrapper">
+          <div class="anime-list-left">
+            <h6>Lists</h6>
+            <div class="categories">
+              <button type="button" class="category-btn active-category">
+                All
+              </button>
+              <button type="button" class="category-btn">Watching</button>
+              <button type="button" class="category-btn">Rewatching</button>
+              <button type="button" class="category-btn">Completed</button>
+              <button type="button" class="category-btn">Paused</button>
+              <button type="button" class="category-btn">Dropped</button>
+              <button type="button" class="category-btn">Planning</button>
+            </div>
+          </div>
+          <div class="anime-list-right">
+            <div class="anime-list-section" id="list-section">
+              <div class="anime-list-item" id="watching-categ">
+              </div>
+              <div class="anime-list-item" id="rewatching-categ">
+              </div>
+              <div class="anime-list-item" id="completed-categ">
+                
+              </div>
+            </div>
+            <div class="anime-list-item" id="paused-categ">
+            </div>
+            <div class="anime-list-item" id="dropped-categ">
+
+            </div>
+            <div class="anime-list-item" id="planning-categ">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="favorites-wrapper">
+        <div class="favorites-section">
+          <h6>Anime</h6>
+          <div class="favorites">
+
+          </div>
+        </div>
+      </div>
+      <div class="reviews-container">
+        <div class="reviews">
+          <div class="review-item">
+            <div class="review-banner">
+              <img src="../images/bg2.jpg" alt="" />
+              <span>Read Full Review</span>
+            </div>
+            <div class="review-details">
+              <h5 class="review-title">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Commodi, provident!
+              </h5>
+              <p class="review-summary">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit,
+                earum. Illo odio aliquam ex eligendi culpa, id eius quaera
+              </p>
+            </div>
+          </div>
+          <div class="review-item">
+            <div class="review-banner">
+              <img src="../images/bg2.jpg" alt="" />
+              <span>Read Full Review</span>
+            </div>
+            <div class="review-details">
+              <h5 class="review-title">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Commodi, provident!
+              </h5>
+              <p class="review-summary">
+                Lorem ipsum dolor sit amet consectetur
+              </p>
+            </div>
+          </div>
+          <div class="review-item">
+            <div class="review-banner">
+              <img src="../images/bg2.jpg" alt="" />
+              <span>Read Full Review</span>
+            </div>
+            <div class="review-details">
+              <h5 class="review-title">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Commodi, provident!
+              </h5>
+              <p class="review-summary">
+                Lorem ipsum dolor sit amet consectetur
+              </p>
+            </div>
+          </div>
+          <div class="review-item">
+            <div class="review-banner">
+              <img src="../images/bg2.jpg" alt="" />
+              <span>Read Full Review</span>
+            </div>
+            <div class="review-details">
+              <h5 class="review-title">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Commodi, provident!
+              </h5>
+              <p class="review-summary">
+                Lorem ipsum dolor sit amet consectetur
+              </p>
+            </div>
+          </div>
+          <div class="review-item">
+            <div class="review-banner">
+              <img src="../images/bg2.jpg" alt="" />
+              <span>Read Full Review</span>
+            </div>
+            <div class="review-details">
+              <h5 class="review-title">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Commodi, provident!
+              </h5>
+              <p class="review-summary">
+                Lorem ipsum dolor sit amet consectetur
+              </p>
+            </div>
+          </div>
+          <div class="review-item">
+            <div class="review-banner">
+              <img src="../images/bg2.jpg" alt="" />
+              <span>Read Full Review</span>
+            </div>
+            <div class="review-details">
+              <h5 class="review-title">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Commodi, provident!
+              </h5>
+              <p class="review-summary">
+                Lorem ipsum dolor sit amet consectetur
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer></footer>
+</body>
+<script src="scripts/load-footer.js"></script>
+<script src="scripts/profile.js"></script>
+<script src="scripts/displayAddedAnimeList.js"></script>
+<script src="scripts/deleteAddedAnimeList.js"></script>
+<script src="scripts/displayFavorites.js"></script>
+
+</html>

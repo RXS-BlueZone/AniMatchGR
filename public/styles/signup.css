@@ -1,0 +1,252 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  overflow: hidden;
+  height: 100%;
+  max-height: 100vh;
+}
+
+/* Cat Image */
+.cat-image {
+  position: absolute;
+  top: 6.7%;
+  left: 27.66%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cat-image img {
+  max-height: 100px;
+  max-width: 100px;
+  transform: scalex(-1);
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("assets/leftbg.jpg") no-repeat center center/cover;
+  background-color: rgba(81, 28, 171, 0.545);
+  background-position: center;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #14052ea6;
+  z-index: 1;
+}
+
+.anime-character {
+  position: absolute;
+  /* right: 6.5%; */
+  right: 19%;
+  bottom: 9%;
+  z-index: 4;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.anime-character img {
+  max-height: 100vh;
+  height: 75vh;
+  pointer-events: auto;
+  /* transform: scaleX(-1); */
+}
+
+/* Form Container */
+.form-container {
+  width: 35%;
+  height: 70%;
+  padding: 30px 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.login-link {
+  text-align: right;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.login-link a {
+  color: rgb(80, 28, 171);
+  text-decoration: none;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.social-login {
+  width: 100%;
+  padding: 10px;
+  /* margin-bottom: 10px; */
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.social-login i {
+  font-size: 0.9rem;
+  margin-right: 2px;
+}
+
+.social-login.google {
+  background-color: rgb(80, 28, 171);
+  color: #fff;
+  height: 3em;
+}
+
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  font-size: 0.8em;
+}
+
+.divider span {
+  background-color: #fff;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+  color: #333;
+}
+
+.divider:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ccc;
+  z-index: 0;
+}
+
+/* Form Fields */
+form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+form label {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.field input {
+  margin-bottom: 25px;
+  padding: 10px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #edf1f5;
+  color: #333;
+  height: 45px;
+  padding-left: 7.5px;
+  width: 100%;
+}
+
+form input::placeholder {
+  color: #2d38468f;
+  padding-left: 7.5px;
+  font-size: 1em;
+}
+
+form input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  padding-left: 7.5px;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+}
+
+.terms input {
+  margin-right: 10px;
+}
+
+form .terms input {
+  padding: none !important;
+  margin-bottom: none !important;
+}
+
+.terms label {
+  font-size: 0.8rem;
+}
+
+.terms a {
+  color: rgb(80, 28, 171);
+  text-decoration: none;
+}
+
+.register-button {
+  padding: 10px;
+  background-color: rgb(80, 28, 171);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 25%;
+  height: 3em;
+  /* align-self: center; */
+  margin-top: 20px;
+}
+
+.register-button:hover {
+  background-color: rgb(80, 28, 171);
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  position: absolute !important;
+  display: inline !important;
+  bottom: 5px;
+}
+
+.field {
+  position: relative;
+  width: 100% !important;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.field:last-child .error-message {
+  left: -25px;
+  bottom: -15px;
+}

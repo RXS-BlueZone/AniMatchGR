@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="scripts/signup-login.js" defer></script>
+</head>
+<body>
+
+            
+    <div class="cat-image">
+        <img src="styles/assets/cat.webp" alt="Cat" />
+    </div>
+    <div class="container">
+
+        <div class="background"></div>
+        <div class="form-container">
+            <div class="top-section">
+                <h1 class="animatch-title">
+                    <span class="ani">Ani</span><span class="match">Match</span>
+                </h1>
+                <div class="welcome-message">               
+                    <!-- <h1 class="welcome">Welcome,</h1>
+                    <p>Looks like you're new here!</p> -->
+                </div>
+            </div>
+            <p class="login-link">Don't have an account? <a href="/signup">Sign Up</a></p>
+            <h2>Login to your Account</h2>
+            <button class="social-login google">
+                <i class="fab fa-google"></i> Log in with Google
+            </button>
+            
+            <div class="divider">
+                <span>OR</span>
+            </div>
+            <form id="loginForm" method="POST" action="http://localhost:3000/login">
+                <input type="email" id="user_email" placeholder="Enter Your Email" name="user_email" required>
+                <input type="password" id="user_password" placeholder="Enter Password" name="user_password" required>
+                <p id="errorMessage"></p> 
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
