@@ -1,4 +1,4 @@
-# aniMatchAuth (Portfolio Version)
+# aniMatchAuth (New Repo)
 
 **aniMatchAuth** is an Express.js–based authentication and session management backend developed as part of the AniMatch project.
 
