@@ -116,7 +116,6 @@ http://localhost:3000
   - `httpOnly`
   - `secure` enabled in production mode
 - Cache headers prevent session reuse on browser navigation
-- This repository was created with a **clean Git history** for portfolio sharing
 
 ---
 
